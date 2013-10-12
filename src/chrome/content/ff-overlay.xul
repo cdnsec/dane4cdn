@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://dane4cdn/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://dane4cdn/locale/overlay.dtd">
+<overlay id="dane4cdn-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+         xmlns:html="http://www.w3.org/1999/xhtml">
+  <script src="overlay.js"/>
+  <script src="dane4cdn.UIHandler.js"/>
+  <script src="dane4cdn.DNSResolver.js"/>
+  <script src="dane4cdn.Cache.js"/>
+  <script src="dane4cdn.Resolver.js"/>
+  <script src="dane4cdn.CertTools.js"/>
+  <script src="dane4cdn.Libunbound.js"/>
+  
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="dane4cdn-strings" src="chrome://dane4cdn/locale/dane4cdn.properties"/>
+  </stringbundleset>
+
+  <popupset id="mainPopupSet">
+	<!-- Extend popup for site identity information -->
+	<panel id="identity-popup" orient="vertical">
+		<hbox id="identity-popup-container">
+			<vbox id="identity-popup-content-box">
+                <hbox id="identity-popup-button-container" pack="end">
+                    <!-- Remove the onblur action -->
+                    <button id="identity-popup-more-info-button" label="More Information" onblur="" oncommand="gIdentityHandler.handleMoreInfoClick(event);" ></button>
+                </hbox>
+			</vbox>
+		</hbox>
+        <separator class="thin"></separator>
+        <html:hr/>
+        <separator class="thin"></separator>
+        <hbox id="identity-popup-dane-container">
+            <vbox id="identity-popup-dane-status-box">
+                <image id="identity-popup-dane-icon" />
+                <button id="identity-popup-cert-info-button" label="Website Cert" oncommand="dane4cdn.UIHandler.onCertInfoClick(event);"></button>
+            </vbox>
+            <vbox id="identity-popup-dane-content-box">
+                <!--                <hbox id="identity-popup-dane4cdn">
+                    <description id="identity-popup-dane4cdn-label" class="identity-popup-description"/>
+                </hbox>
+-->
+                <description id="identity-popup-dane4cdn-label" class="identity-popup-description"/>
+                <description id="identity-popup-dane4cdn-delegator-label" class="identity-popup-description"/>
+                <description id="identity-popup-dane4cdn-delegatee-label" class="identity-popup-description"/>
+            </vbox>
+        </hbox>
+	</panel>
+  </popupset>
+  
+  <textbox id="urlbar">
+    <!-- Extend the identity box in urlbar -->
+    <box id="identity-box" role="button"
+         onclick="gIdentityHandler.handleIdentityButtonEvent(event); dane4cdn.UIHandler.onIdentityPopupShow();"
+         onkeypress="gIdentityHandler.handleIdentityButtonEvent(event); dane4cdn.UIHandler.onIdentityPopupShow();">
+         <hbox id="identity-icon-dane-labels" insertafter="identity-icon-label">
+             <label id="identity-icon-dane-label" class="plain" flex="1"></label>
+             <label id="identity-icon-country-dane-label" class="plain"></label>
+         </hbox>
+    </box>
+    <!--    <box id="switch-https-box" role="button"
+         onclick="dane4cdn.UIHandler.switchHttps();"
+         onkeypress="dane4cdn.UIHandler.switchHttps();">
+      <image id="switch-https-icon" />
+    </box>
+-->
+  </textbox>
+
+</overlay>
+

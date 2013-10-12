@@ -1,0 +1,12 @@
+DANE4CDN a Firefox extension, which shows the demo of explict delegation from
+web site to CDN provider by extending DANE protocol.
+
+DANE4CDN extension relies on the following DNS libraries:
+  - libunbound (2.1.5)
+  - libldns (1.6.16)
+Users must install these two DNS libraries before using DANE4CDN extenstion.
+
+After installing DANE4CDN extension successfully, users may access the following
+URL to see how DANE4CDN works (which is shown by Figure dane4cdn.png).
+
+Web site demo: https://dane4cdn.cdnsec.info

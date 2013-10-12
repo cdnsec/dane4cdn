@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE prefwindow SYSTEM "chrome://dane4cdn/locale/options.dtd">
+<prefwindow id="dane4cdn-pref-window" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" title="&prefwindow.title;">
+
+  <prefpane id="dane4cdn-pref-pane1">
+    <preferences>
+      <preference id="cacheflushinterval" name="extensions.dane4cdn.cacheflushinterval" type="int"/>
+      <preference id="debugoutput" name="extensions.dane4cdn.debugoutput" type="bool"/>
+      <preference id="dnsforwarder" name="extensions.dane4cdn.dnsforwarder" type="string"/>
+    </preferences>
+    
+    <groupbox>
+	<caption label="&dnsserver.label;" />
+    	<hbox align="center">
+		<label control="pref-dnsforwarder" value="&dnsserver.description;" />
+		<textbox preference="dnsforwarder" id="pref-dnsforwarder" />
+    	</hbox>
+    </groupbox>
+  </prefpane>
+</prefwindow>

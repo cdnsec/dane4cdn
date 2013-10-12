@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>dane4cdn@cdnsec.info</em:id>
+    <em:type>2</em:type>
+    <em:name>DANE For CDN</em:name>
+    <em:description>Description</em:description>
+    <em:version>0.1</em:version>
+    <em:creator>CDN-Security</em:creator>
+    <em:developer>CDN-Secuirty</em:developer>
+    <em:homepageURL>http://dane4cdn.cdnsec.info</em:homepageURL>
+    <em:iconURL>chrome://dane4cdn/skin/icon.png</em:iconURL>
+    <em:optionsURL>chrome://dane4cdn/content/options.xul</em:optionsURL>
+    <em:unpack>true</em:unpack>
+    <em:targetApplication>
+      <Description>
+        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- Firefox -->
+        <em:minVersion>5.0</em:minVersion>
+        <em:maxVersion>21.*</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+  </Description>
+</RDF>
