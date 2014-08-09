@@ -9,4 +9,4 @@ Users must install these two DNS libraries before using DANE4CDN extenstion.
 After installing DANE4CDN extension successfully, users may access the following
 URL to see how DANE4CDN works (which is shown by Figure dane4cdn.png).
 
-Web site demo: https://dane4cdn.cdnsec.info
+Web site URL: https://dane4cdn.cdnsec.info
